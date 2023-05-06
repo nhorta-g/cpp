@@ -3,11 +3,14 @@
 
 int	main(int ac, char **av)
 {
-	int	i = 0;
+	(void)ac;
+
+	int	i = 1;
 	while (av[i])
 	{
-		for (int j = 0; j < strlen(av[i]); j++)
-			putchar(toupper(av[i][j]));
+		for (int j = 0; j < (int)strlen(av[i]); j++)
+			std::cout << toupper(av[i][j]);
+		std::cout<<std::endl;
 		i++;
 	}
 }
