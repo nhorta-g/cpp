@@ -6,12 +6,10 @@ int main(void)
 	std::string input;
 	bool exit = false;
 
-	std::cout<<"Welcome to this crappy awesome \
-		phonebook!"<<std::endl;
+	std::cout<<"Welcome to this crappy awesome phonebook!"<<std::endl;
 	while(!exit)
 	{
-		std::cout<<"Enter one option: add, search or exit, \
-		please."<<std::endl;
+		std::cout<<"Enter one option: add, search or exit, please."<<std::endl;
 		std::getline(std::cin, input);
 		if(input == "add")
 			PhoneBook.add();
@@ -20,7 +18,6 @@ int main(void)
 		else if(input == "exit")
 			exit = true;
 		else
-			std::cout<<"Not a valid option. Please say: add, \
-				search or exit"<<std::endl;
+			std::cout<<"Not a valid option. Please say: add, search or exit"<<std::endl;
 	}
 }
