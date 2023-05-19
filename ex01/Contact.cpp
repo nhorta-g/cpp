@@ -1,9 +1,9 @@
 #include "Contact.hpp"
 
 Contact::Contact(void){
-	std::cout<<"Constructor called, contact."<<std::endl;
+	return ;
 }
 
 Contact::~Contact(void){
-	std::cout<<"Destructor called, contact."<<std::endl;
+	return ;
 }

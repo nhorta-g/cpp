@@ -8,12 +8,13 @@
 class	PhoneBook
 {
 	public:
-		void	add(void);
-		void	search(void);
 		PhoneBook(void);
 		~PhoneBook(void);
 	private:
-		Contact contact[8];
-		int	index;
+		int		_index;
+		Contact	_contact[8];
+		void	add(void);
+		void	search(void);
+		void	input_data(std::string msg, std::string value);
 };
 #endif
