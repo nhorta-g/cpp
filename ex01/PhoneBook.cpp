@@ -34,13 +34,13 @@ void	PhoneBook::search(void)
 {
 	int	num;
 
-	std::cout << "	To show a contact enter the one you want from 1 to 8" << std::endl;
+	std::cout << "	To show a contact enter the one you want from 0 to 7" << std::endl;
 	std::cin >> num;
-	if (std::cin.fail())
-		std::cout << "Not the correct input, please insert number from 1 to 8" << std::endl;
-	std::cout << "Details of first name: " << _contact[_index].first_name << std::endl;
-	std::cout << "Details of last name: " << _contact[_index].last_name << std::endl;
-	std::cout << "Details of nickname: " << _contact[_index].nickname << std::endl;
-	std::cout << "Details of phone number: " << _contact[_index].phone_number << std::endl;;
-	std::cout << "Details of darkest secret: " << _contact[_index].darkest_secret << std::endl;;
+	if (std::cin.fail() || num > 7 || num < 0)
+		std::cout << "Not the correct input, please insert number from 0 to 7" << std::endl;
+	std::cout << "First name: " << this->_contact[this->_index].first_name << std::endl;
+	std::cout << "Last name: " << this->_contact[this->_index].last_name << std::endl;
+	std::cout << "Nickname: " << this->_contact[this->_index].nickname << std::endl;
+	std::cout << "Phone number: " << this->_contact[this->_index].phone_number << std::endl;;
+	std::cout << "Darkest secret: " << this->_contact[this->_index].darkest_secret << std::endl;;
 }

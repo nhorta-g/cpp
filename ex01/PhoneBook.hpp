@@ -10,11 +10,11 @@ class	PhoneBook
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
+		void	add(void);
+		void	search(void);
 	private:
 		int		_index;
 		Contact	_contact[8];
-		void	add(void);
-		void	search(void);
 		void	input_data(std::string msg, std::string value);
 };
 #endif
