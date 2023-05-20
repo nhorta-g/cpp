@@ -4,17 +4,18 @@
 # include "Contact.hpp"
 # include <iostream>
 # include <string>
+# include <stdio.h>
 
 class	PhoneBook
 {
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	add(void);
-		void	search(void);
+		void		add(void);
+		void		search(void);
 	private:
-		int		_index;
-		Contact	_contact[8];
-		void	input_data(std::string msg, std::string value);
+		int			_index;
+		Contact		_contact[8];
+		void		input_data(std::string msg, std::string value);
 };
 #endif

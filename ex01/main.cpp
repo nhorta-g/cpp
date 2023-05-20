@@ -10,7 +10,9 @@ int main(void)
 	while(!exit)
 	{
 		std::cout<<"Enter one option: add, search or exit, please."<<std::endl;
+		std::cin.clear();
 		std::getline(std::cin, input);
+		std::cin.clear();
 		if(input == "add")
 			PhoneBook.add();
 		else if(input == "search")
