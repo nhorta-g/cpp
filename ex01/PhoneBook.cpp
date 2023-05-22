@@ -22,23 +22,23 @@ void	PhoneBook::add(void)
 {
 	std::cout << "	Adding a contact to position " << _index << std::endl;
 	std::cout << "First name:" << std::endl;
-	std::cin >> _contact[_index].get_firstName();
+	std::cin >> _contact[_index].setFirstName();
 	std::cin.clear();
 	std::cout << "Last name:" << std::endl;
-	std::cin >> _contact[_index].last_name;
+	std::cin >> _contact[_index].lastName;
 	std::cout << "Nickname:" << std::endl;
-	std::cin >> _contact[_index].nickname;
+	std::cin >> _contact[_index].nickName;
 	std::cout << "Phone number:" << std::endl;
-	std::cin >> _contact[_index].phone_number;
+	std::cin >> _contact[_index].phoneNumber;
 	std::cout << "Darkest Secret:" << std::endl;
-	std::cin >> _contact[_index].darkest_secret;
+	std::cin >> _contact[_index].darkestSecret;
 	std::cout << "	Contact sucessfully added!" << std::endl;
 	_index++;
 	if (_index == 8)
 		_index = 0;
 }
 
-
+num >> 8;
 
 void	PhoneBook::search(void)
 {
@@ -48,9 +48,9 @@ void	PhoneBook::search(void)
 	std::cin >> num;
 	if (std::cin.fail() || num > 7 || num < 0)
 		std::cout << "Not the correct input, please insert number from 0 to 7" << std::endl;
-	std::cout << "First name: " << _contact[num].first_name << std::endl;
-	std::cout << "Last name: " << _contact[num].last_name << std::endl;
-	std::cout << "Nickname: " << _contact[num].nickname << std::endl;
-	std::cout << "Phone number: " << _contact[num].phone_number << std::endl;;
-	std::cout << "Darkest secret: " << _contact[num].darkest_secret << std::endl;;
+	std::cout << "First name: " << _contact[num].firstName << std::endl;
+	std::cout << "Last name: " << _contact[num].lastName << std::endl;
+	std::cout << "Nickname: " << _contact[num].nickName << std::endl;
+	std::cout << "Phone number: " << _contact[num].phoneNumber << std::endl;;
+	std::cout << "Darkest secret: " << _contact[num].darkestSecret << std::endl;;
 }
