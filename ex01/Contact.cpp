@@ -32,7 +32,7 @@ std::string Contact::getNickName(void) {
 	return this->nickName;
 }
 
-void	Contact::setPhoneNumber(std::string newphoneNumber) {
+void	Contact::setPhoneNumber(std::string newPhoneNumber) {
 	this->phoneNumber = newPhoneNumber;
 }
 
