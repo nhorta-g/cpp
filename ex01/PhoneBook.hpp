@@ -16,6 +16,7 @@ class	PhoneBook
 	private:
 		int			_index;
 		Contact		_contact[8];
-		void		input_data(std::string msg, std::string value);
+		void		_show_contact(void);
+		void	_print_contacts(std::string str);
 };
 #endif
