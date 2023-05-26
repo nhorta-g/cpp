@@ -17,24 +17,19 @@ void	PhoneBook::add(void)
 	std::cout << "First name:";
 	std::cin >> temp;
 	_contact[_index].setFirstName(temp);
-	std::cin.clear();
 	std::cout << "Last name:";
 	std::cin >> temp;
 	_contact[_index].setLastName(temp);
-	std::cin.clear();
 	std::cout << "Nickname:";
 	std::cin >> temp;
 	_contact[_index].setNickName(temp);
-	std::cin.clear();
 	std::cout << "Phone number:";
 	std::cin >> temp;
 	_contact[_index].setPhoneNumber(temp);
-	std::cin.clear();
 	std::cout << "Darkest Secret:";
 	std::cin >> temp;
 	_contact[_index].setDarkestSecret(temp);
-	std::cin.clear();
-	std::cout << "	Contact sucessfully added!" << std::endl;
+	std::cout << std::endl << "	Contact sucessfully added!" << std::endl << std::endl;
 	_index++;
 	if (_index == 8)
 		_index = 0;
@@ -63,9 +58,18 @@ void	PhoneBook::_show_contact(void)
 
 	std::cout << std::endl << std::endl << std::endl;
 	std::cout << "	To show a contact enter the one you want from 1 to 8" << std::endl;
-	std::cin >> num;
-	if (std::cin.fail() || num > 8 || num < 1)
-		std::cout << "Not the correct input, please insert number from 1 to 8" << std::endl;
+	while (!(std::cin >> num) || num > 8 || num < 1)
+	{
+		if (std::cin.eof())
+			return ;
+		if (_contact[num - 1].getFirstName().empty()) {
+			std::cout << "There are no contacts in this position" << std::endl;
+			return ;
+		}
+		std::cout << "	Not the correct input, please insert number from 1 to 8" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(10000000,'\n');
+	}
 	num = num - 1;
 	std::cout << "First name: " << _contact[num].getFirstName() << std::endl;
 	std::cout << "Last name: " << _contact[num].getLastName() << std::endl;
@@ -78,6 +82,10 @@ void	PhoneBook::search(void)
 {
 	int i = 0;
 
+	if (_contact[0].getFirstName().empty()) {
+		std::cout << "There are no stored contacts" << std::endl;
+		return ;
+	}
 	std::cout << std::endl << std::endl << std::endl;
 	std::cout << "          |          |          |          " << std::endl;
 	std::cout << "   Index  |First Name| Last Name|  Nickname" << std::endl;

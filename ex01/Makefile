@@ -19,9 +19,11 @@ clean:
 fclean:		clean
 			rm -f $(NAME)
 
+r:			fclean all clean
+
 re:			fclean all
 
 %.o:	%.cpp
 			$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean r re
