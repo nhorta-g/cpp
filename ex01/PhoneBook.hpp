@@ -5,6 +5,7 @@
 # include <iostream>
 # include <string>
 # include <stdio.h>
+# include <stdlib.h>
 
 class	PhoneBook
 {
@@ -17,6 +18,7 @@ class	PhoneBook
 		int			_index;
 		Contact		_contact[8];
 		void		_show_contact(void);
-		void	_print_contacts(std::string str);
+		void		_print_contacts(std::string str);
+		int			_input_number();
 };
 #endif

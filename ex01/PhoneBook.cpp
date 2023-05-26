@@ -27,7 +27,8 @@ void	PhoneBook::add(void)
 	std::cin >> temp;
 	_contact[_index].setPhoneNumber(temp);
 	std::cout << "Darkest Secret:";
-	std::cin >> temp;
+	std::cin.ignore(10000000,'\n');
+	std::getline(std::cin, temp);
 	_contact[_index].setDarkestSecret(temp);
 	std::cout << std::endl << "	Contact sucessfully added!" << std::endl << std::endl;
 	_index++;
@@ -52,25 +53,32 @@ void	PhoneBook::_print_contacts(std::string str)
 	}
 }
 
-void	PhoneBook::_show_contact(void)
+int		PhoneBook::_input_number()
 {
-	int	num;
+	int num;
 
-	std::cout << std::endl << std::endl << std::endl;
+	std::cout << std::endl << std::endl;
 	std::cout << "	To show a contact enter the one you want from 1 to 8" << std::endl;
 	while (!(std::cin >> num) || num > 8 || num < 1)
 	{
 		if (std::cin.eof())
-			return ;
-		if (_contact[num - 1].getFirstName().empty()) {
-			std::cout << "There are no contacts in this position" << std::endl;
-			return ;
-		}
+			exit(0);
 		std::cout << "	Not the correct input, please insert number from 1 to 8" << std::endl;
 		std::cin.clear();
 		std::cin.ignore(10000000,'\n');
 	}
-	num = num - 1;
+	return num;
+}
+
+void	PhoneBook::_show_contact(void)
+{
+	int	num;
+
+	num = _input_number() - 1;
+	while (_contact[num].getFirstName().empty()) {
+		std::cout << "There are no contacts in this position";
+		num = _input_number() - 1;
+	}
 	std::cout << "First name: " << _contact[num].getFirstName() << std::endl;
 	std::cout << "Last name: " << _contact[num].getLastName() << std::endl;
 	std::cout << "Nickname: " << _contact[num].getNickName() << std::endl;

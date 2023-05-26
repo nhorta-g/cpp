@@ -15,10 +15,7 @@ int main(void)
 		if (std::cin.eof())
 			return 1;
 		if(input == "add")
-		{
 			PhoneBook.add();
-			std::cin.ignore(10000000,'\n');
-		}
 		else if(input == "search")
 		{
 			PhoneBook.search();

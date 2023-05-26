@@ -6,7 +6,7 @@ OBJ = $(SRC:%.cpp=%.o)
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 all:		$(NAME)
 
@@ -18,8 +18,6 @@ clean:
 
 fclean:		clean
 			rm -f $(NAME)
-
-r:			fclean all clean
 
 re:			fclean all
 
